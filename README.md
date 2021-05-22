@@ -12,7 +12,7 @@ What are Microservices, anyway?
 
  1) autonomy - each Microservice can know about existence of others ones, but they are egoists and don't care
  2) resilience - Microservices work together and on their own, because in a distributed system a service can’t trust its collaborators
- 3) transparency - we need to know what is going on in this cloud. One can be more confident in a service if One can reliably deploy and monitor it. Service monitoring should include log aggregation and service-level health
+ 3) transparency - we need to know what is going on in this cloud. In order to be more confident in a service one can reliably deploy and monitor it. Service monitoring should include log aggregation and service-level health
 checks - use ELK for that
  4) automation - need this if we have 10^n microservices, where n -> infinity
  5) alignment - consistency is the key. 
@@ -20,8 +20,7 @@ checks - use ELK for that
  
 * As a result microservices reduce friction in development, enabling autonomy, technical flexibility, and loose coupling.
 
-* Designing microservices is challenging because of the need for adequate domain knowledge and balancing priorities across teams. Take a look at Amazon - their services reflect the organization's structure: 1 team = 1 service
-It’s crucial to understand the product domain when designing microservices.
+* Designing microservices is challenging because of the need for adequate domain knowledge and balancing priorities across teams. Take a look at Amazon - their services reflect the organization's structure: 1 team = 1 service. As a result it’s crucial to understand the product domain when designing microservices.
 
 * Services expose contracts to other services. Good contracts are 
 
@@ -85,14 +84,14 @@ Transactions
 
 * Anticipating failure scenarios is a crucial element of building services that reflect real-world circumstance, rather than operating in isolation.
 
-* You typically implement queries across microservices by composing results from multiple APIs.
+* Implement queries across microservices by composing results from multiple APIs.
 
 * Efficient complex queries should use the CQRS pattern to materialize read models, especially where those query patterns require alternative data stores.
 
 
 Reliability
 ============
-* Failure is inevitable in complex distributed systems — it is necessary to consider fault tolerance during desig phase.
+* Failure is inevitable in complex distributed systems — it is necessary to consider fault tolerance during design phase.
 
 * The availability of individual services affects the availability of the wider application.
 
@@ -133,8 +132,6 @@ The Basis for everything
 * The use of a chassis allows you to abstract the implementation of certain infrastructure-related code.
 
 * Service discovery, observability, and different communication protocols are concerns of a microservice chassis, and it should provide them.
-
-* One can quickly prototype a complex feature like the place sell order example, if the proper tooling exists.
 
 * Although the microservice architecture is often associated with the possibility of building systems in any language, those systems, when in production, need to offer some guarantees and have mechanisms to allow their operation and maintenance to be manageable.
 
